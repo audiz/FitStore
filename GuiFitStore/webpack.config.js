@@ -18,8 +18,23 @@ module.exports = {
   },
   devtool: '#source-map',
   module: {
+
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      { test: /\.css$/, use: [
+          'style-loader',
+          'css-loader'
+        ] },
+    ],
+
     // How to process project files with loaders
-    loaders: [
+    /*loaders: [
       // Process any .js or .jsx file with Babel
       {
         test: /\.js$/,
@@ -37,7 +52,7 @@ module.exports = {
           limit: 10000
         }
       }
-    ]
+    ]*/
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -45,7 +60,7 @@ module.exports = {
         NODE_ENV: JSON.stringify("production")
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({ sourceMap: true}),
+    //new webpack.optimize.UglifyJsPlugin({ sourceMap: true}),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/index.html'
