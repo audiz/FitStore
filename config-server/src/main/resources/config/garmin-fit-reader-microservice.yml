@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+eureka:
+  client:
+    fetch-registry: true
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    initialization-mode: always
+  batch:
+    job:
+      enabled: false
+  data:
+    mongodb:
+      #port: 0
+      database: fitstore
+      uri: mongodb://localhost:27017/db
+
+segment:
+  service:
+    name: "segment-finder-microservice"
+    url: "http://segment-finder-microservice"

@@ -1,0 +1,54 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    fetch-registry: true
+
+spring:
+  data:
+    mongodb:
+      #port: 0
+      database: fitstore
+      uri: mongodb://localhost:27017/db
+
+zuul:
+  prefix: "/api"
+  strip-prefix: true
+  sensitiveHeaders: Authorization
+  routes:
+    reader:
+      serviceId: garmin-fit-reader-microservice
+      strip-prefix: false
+    names:
+      serviceId: names-microservice
+      strip-prefix: false
+    data:
+      serviceId: training-data-microservice
+      strip-prefix: false
+    segment:
+      serviceId: segment-finder-microservice
+      strip-prefix: false
+  ignoredServices: '*'
+  host:
+    time-to-live: -1
+    connect-timeout-millis: 5000
+    max-per-route-connections: 10000
+    max-total-connections: 5000
+    socket-timeout-millis: 60000
+  semaphore:
+    max-semaphores: 500
+
+hystrix:
+  command:
+    default:
+      execution:
+        iso lation:
+          thread:
+            timeoutInMilliseconds: 30000
+
+ribbon:
+  ReadTimeout: 60000
+  connection-timeout: 3000
+  eureka:
+    enabled: true
