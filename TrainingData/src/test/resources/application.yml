@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      port: 0
+      database: fitstore
+
+mongock:
+  runner-type: "ApplicationRunner" # default
+  #runner-type: "InitializingBean"
+  change-logs-scan-package:
+    - ru.otus.fitstore.changelog
+
+eureka:
+  client:
+    enabled: false

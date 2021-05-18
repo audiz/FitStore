@@ -1,0 +1,4 @@
+{$and: [
+  {'coordinates':{$geoIntersects: {$geometry: {type: "LineString", coordinates: [[57.2496525491671, 60.07255945179],[57.2496042694062, 60.072505807611]]}}}},
+  {'coordinates':{$geoIntersects: {$geometry: {type: "LineString", coordinates: [[57.2496525491671, 60.07255945179],[57.2496042694062, 60.072505807611]]}}}},
+]}

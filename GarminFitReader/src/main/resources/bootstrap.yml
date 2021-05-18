@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: garmin-fit-reader-microservice
+  cloud:
+    config:
+      fail-fast: true

@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: segment-finder-microservice
+  cloud:
+    config:
+      fail-fast: true

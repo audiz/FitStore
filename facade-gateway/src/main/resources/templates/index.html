@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Greetings microservice group API-gateway</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" th:href="@{favicon.ico}">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" th:href="@{favicon.ico}">
+<!--
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" th:href="@{css/styles.css}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+-->
+</head>
+<body>
+
+<h3>Greetings microservice group API-gateway</h3>
+<a href="api/reader/convert">api/reader/convert</a><br/>
+<a href="api/jobinfo/1">api/jobinfo/1</a><br/>
+<a href="api/data/all">api/data/all</a><br/>
+<a href="api/names/random">api/names/random</a><br/>
+<br/><br/>
+
+<h3>Upload Single File</h3>
+<form id="singleUploadForm" name="singleUploadForm" action="api/reader/uploadFile" METHOD="POST" enctype="multipart/form-data">
+    <input id="singleFileUploadInput" type="file" name="file" class="file-input" required />
+    <button type="submit" class="primary submit-btn">Submit</button>
+</form>
+
+</body>
+</html>

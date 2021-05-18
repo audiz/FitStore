@@ -1,0 +1,2 @@
+{"_id": {"$oid": "608c33645402f1671194b4c2"}, "username": "user", "password": "user", "roles": ["USER"], "maxHeartRate": "190", "firstName": "John", "lastName": "Doe"}
+{"_id": {"$oid": "608c33645402f1671194b4c3"}, "username": "admin", "password": "admin", "roles": ["USER"], "maxHeartRate": "182", "firstName": "Firstname", "lastName": "Lastname"}

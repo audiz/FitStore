@@ -1,0 +1,77 @@
+version: '3'
+services:
+  config-server:
+    build: ./config-server/
+    ports:
+      - "8888:8888"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://service-discovery-server:8761/eureka
+    networks:
+      nw:
+
+  service-discovery-server:
+    build: ./service-discovery-server/
+    restart: always
+    environment:
+      - spring.cloud.config.uri=http://config-server:8888
+      - eureka.client.serviceUrl.defaultZone=http://service-discovery-server:8761/eureka
+    ports:
+      - "8761:8761"
+    networks:
+      nw:
+
+  facade-gateway:
+    build:
+      context: ./
+      dockerfile: Facade.Dockerfile
+    environment:
+      - spring.cloud.config.uri=http://config-server:8888
+      - eureka.client.serviceUrl.defaultZone=http://service-discovery-server:8761/eureka
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      nw:
+
+  garmin-fit-reader:
+    build:
+      context: ./
+      dockerfile: Fit.Dockerfile
+    restart: always
+    environment:
+      - spring.cloud.config.uri=http://config-server:8888
+      - eureka.client.serviceUrl.defaultZone=http://service-discovery-server:8761/eureka
+    ports:
+      - "8081:8081"
+    networks:
+      nw:
+
+  segment-finder:
+    build:
+      context: ./
+      dockerfile: Segment.Dockerfile
+    restart: always
+    environment:
+      - spring.cloud.config.uri=http://config-server:8888
+      - eureka.client.serviceUrl.defaultZone=http://service-discovery-server:8761/eureka
+    ports:
+      - "8087:8087"
+    networks:
+      nw:
+
+  training-data:
+    build:
+      context: ./
+      dockerfile: Training.Dockerfile
+    restart: always
+    environment:
+      - spring.cloud.config.uri=http://config-server:8888
+      - eureka.client.serviceUrl.defaultZone=http://service-discovery-server:8761/eureka
+    ports:
+      - "8086:8086"
+    networks:
+      nw:
+
+networks:
+  nw:
+
