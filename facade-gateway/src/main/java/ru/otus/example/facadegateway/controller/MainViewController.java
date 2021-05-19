@@ -13,10 +13,10 @@ import ru.otus.example.facadegateway.model.AuthInfo;
 @Controller
 public class MainViewController {
 
-    @GetMapping("/")
+ /*   @GetMapping("/")
     public String mainPage(Model model) {
         return "index";
-    }
+    }*/
 
     @GetMapping("/authinfo")
     @ResponseBody

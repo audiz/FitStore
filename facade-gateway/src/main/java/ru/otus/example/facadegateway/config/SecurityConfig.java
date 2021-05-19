@@ -63,7 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
 
-                .authorizeRequests().antMatchers("/", "/favicon.ico").permitAll()
+                .authorizeRequests().antMatchers("/", "/favicon.ico", "/bundle.min.js").permitAll()
                 .and()
 
                 .authorizeRequests().antMatchers("/login-form-processing").anonymous()
