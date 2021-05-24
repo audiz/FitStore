@@ -32,27 +32,6 @@ module.exports = {
           'css-loader'
         ] },
     ],
-
-    // How to process project files with loaders
-    /*loaders: [
-      // Process any .js or .jsx file with Babel
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: ['babel-loader']
-      },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      },
-      {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000
-        }
-      }
-    ]*/
   },
   plugins: [
     new webpack.DefinePlugin({

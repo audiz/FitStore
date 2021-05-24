@@ -83,7 +83,7 @@ class ActivitiesTable extends Component {
                                                 <div className="col">{totalMovingTime}</div>
                                             </div>
                                             <Link to={`${match.url}/${obj.id}`}>
-                                            <img src={"https://maps.googleapis.com/maps/api/staticmap?size=544x218&maptype=roadmap&path=color:0x000000ff|weight:2|enc:" + obj.polyUrl + "&format=jpg&key=AIzaSyABkqwr_0fTkKCOvzE_5CFpo4gneLgR2-I"} width={544} height={218}/>
+                                            <img src={"https://maps.googleapis.com/maps/api/staticmap?size=544x218&maptype=roadmap&path=color:0x000000ff|weight:2|enc:" + obj.polyUrl + "&format=jpg&key=google_api_key"} width={544} height={218}/>
                                             </Link>
                                         </div>
                                     </blockquote>

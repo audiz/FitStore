@@ -93,6 +93,6 @@ public class TrainingDataController {
         //path.add(Position.fromLngLat(-120.2, 38.5));
 
         String encoded = PolylineUtils.encode(path, 5);
-        return "https://maps.googleapis.com/maps/api/staticmap?size=544x218&maptype=roadmap&path=color:0x000000ff|weight:2|enc:"+encoded+"&format=jpg&key=AIzaSyABkqwr_0fTkKCOvzE_5CFpo4gneLgR2-I";
+        return "https://maps.googleapis.com/maps/api/staticmap?size=544x218&maptype=roadmap&path=color:0x000000ff|weight:2|enc:"+encoded+"&format=jpg&key=google_api_key";
     }
 }

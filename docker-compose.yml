@@ -1,5 +1,18 @@
 version: '3'
 services:
+  mongodb:
+    image: mongo:4.4.4
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: fitstore
+    ports:
+      - 27018:27017
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      nw:
+
   config-server:
     build: ./config-server/
     ports:

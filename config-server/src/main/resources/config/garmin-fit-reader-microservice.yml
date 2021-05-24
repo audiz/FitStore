@@ -16,7 +16,8 @@ spring:
     mongodb:
       #port: 0
       database: fitstore
-      uri: mongodb://localhost:27017/db
+      #uri: mongodb://localhost:27017/db
+      uri: mongodb://mongodb:27017/db
 
 segment:
   service:

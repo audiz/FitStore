@@ -56,7 +56,7 @@ class Home extends Component {
                     <p>File Type: {this.state.selectedFile.type}</p>
                     <p>
                         Last Modified:{" "}
-                        {this.state.selectedFile.lastModifiedDate.toDateString()}
+                        {this.state.selectedFile.lastModifiedDate !== undefined ? this.state.selectedFile.lastModifiedDate.toDateString(): null}
                     </p>
                 </div>
             );

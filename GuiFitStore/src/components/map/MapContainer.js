@@ -67,7 +67,7 @@ class GoogleMaps extends Component {
             <div>
             {this.props.trackData.length > 0 ? <div style={{ height: "250px", width: "100%" }}>
                     <GoogleMapReact
-                        bootstrapURLKeys={{ key: "AIzaSyABkqwr_0fTkKCOvzE_5CFpo4gneLgR2-I" }}
+                        bootstrapURLKeys={{ key: "google_api_key" }}
                         defaultCenter={this.props.trackData[this.props.trackData.length - 1]}
                         defaultZoom={10}
                         yesIWantToUseGoogleMapApiInternals
