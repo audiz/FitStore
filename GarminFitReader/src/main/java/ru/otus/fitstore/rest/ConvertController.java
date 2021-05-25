@@ -30,28 +30,6 @@ public class ConvertController {
     private final Job importGarminFitDataJob;
     private final JobFileService jobFileService;
 
-
-    // TODO Remove \ change
-    @GetMapping("reader/convert")
-    public String all() {
-        log.info("convert");
-
-        Long jobId = null;
-        String status = null;
-        JobExecution execution = null;
-        try {
-            execution = jobLauncher.run(importGarminFitDataJob, new JobParametersBuilder()
-                    .addString(JobConfig.LAUNCH_TIME, UUID.randomUUID().toString())
-                    .addString(JobConfig.INPUT_FILE_PATH, "/home/nout/Downloads/20210420200147.fit")
-                    .toJobParameters());
-            jobId = execution.getId();
-            status = execution.getStatus().toString();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "ok - " + jobId + " - " + status;
-    }
-
     @PostMapping("reader/uploadFile")
     public ResponseEntity<String> uploadFile(HttpServletRequest request, @RequestParam("file") MultipartFile multipartFile) {
 
