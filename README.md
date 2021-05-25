@@ -1,2 +1,11 @@
-docker-compose up --build -d mongodb 
-docker-compose build -d mongodb 
+Проектная работа по курсу: **"Разработчик на Spring Framework"**
+
+Тема: **"Социальная сеть хранения и обработки данных(Garmin Fit) спортивных тренировок(аналог Strava)"**
+
+Для гугл карт нужно предоставить api key, для этого заменить все строки `google_api_key` в проекте на свой ключ.
+
+Сборка и запуск проекта в докер
+
+        docker-compose build   
+        docker-compose up
+
