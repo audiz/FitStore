@@ -1,10 +1,10 @@
-Проектная работа по курсу: **"Разработчик на Spring Framework"**
+Project work on the course: * * "Developer on the Spring Framework"**
 
-Тема: **"Социальная сеть хранения и обработки данных(Garmin Fit) спортивных тренировок(аналог Strava)"**
+Topic: ** " Social network for data storage and processing (Garmin Fit) of sports training (similar to Strava)"**
 
-Для гугл карт нужно предоставить api key, для этого заменить все строки `google_api_key` в проекте на свой ключ.
+For Google maps, you need to provide an api key, to do this, replace all the lines `google_api_key` in the project with your own key.
 
-Сборка и запуск проекта в докер
+Build and run a project in docker
 
         docker-compose build   
         docker-compose up
